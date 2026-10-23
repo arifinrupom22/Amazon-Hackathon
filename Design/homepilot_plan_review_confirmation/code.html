@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-tertiary-container":"#fff1e9","tertiary-container":"#a95b00","on-primary":"#ffffff","surface-container-low":"#edf4ff","tertiary-fixed":"#ffdcc3","on-background":"#121c26","outline":"#6e7977","surface-dim":"#d1dbe9","secondary":"#54615d","on-secondary-fixed":"#121e1b","primary":"#00625c","primary-container":"#177c75","tertiary-fixed-dim":"#ffb77d","on-primary-fixed":"#00201e","secondary-fixed-dim":"#bccac5","on-primary-container":"#c3fff8","on-error-container":"#93000a","on-surface-variant":"#3e4947","on-surface":"#121c26","surface-bright":"#f7f9ff","secondary-container":"#d8e6e1","inverse-on-surface":"#e8f2ff","primary-fixed":"#9af2e9","on-primary-fixed-variant":"#00504b","surface-tint":"#006a64","primary-fixed-dim":"#7ed5cd","on-tertiary-fixed-variant":"#6e3900","inverse-primary":"#7ed5cd","surface-container-highest":"#d9e3f1","on-tertiary":"#ffffff","surface":"#f7f9ff","on-error":"#ffffff","surface-container-high":"#dfe9f7","on-secondary":"#ffffff","tertiary":"#854600","error-container":"#ffdad6","on-secondary-container":"#5a6763","on-tertiary-fixed":"#2f1500","error":"#ba1a1a","surface-container-lowest":"#ffffff","background":"#f7f9ff","inverse-surface":"#27313c","outline-variant":"#bdc9c7","on-secondary-fixed-variant":"#3d4946","surface-variant":"#d9e3f1","surface-container":"#e4effd","secondary-fixed":"#d8e6e1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin":"1rem","gutter":"1rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-xl":"2rem","margin-desktop":"2rem"},"fontFamily":{"body-lg":["Inter"],"label-sm":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"label-md":["Inter"],"body-sm":["Inter"],"label-xs":["Inter"],"headline-xl":["Inter"],"headline-sm":["Inter"]},"fontSize":{"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-xs":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-60 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 px-space-md border-b border-outline-variant flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="HomePilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xcvw_YXP0PyxWjShvDy4LfWnO13s74_cGHaREBLgZYkHx20UEwLqG9o4zJDtFBFj0C-Gwrv9EUC3EP9CWpg--s9vxpRUHfxuIBT-kQnsDpNYsjgbXplj0eOGMFoXW4ec7tZf6x5-DNloVJO9VRUURb6XfGLzeKn_8LDIElwzRCEAiLU0t1fhxPolZhESisqF99TiknkVImkMJZYGJ3cE0EwdpXWFNn0llj9XjxP7Ia13XnnB3tWy_5uAL6"/><span class="font-headline-sm text-headline-sm text-on-surface">HomePilot AI</span></div><span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-xs text-label-xs">v1.0</span></div><div class="p-space-md flex flex-col gap-space-sm"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[18px]">home</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">The Miller Household</span><span class="font-label-xs text-label-xs text-secondary">4 Members Active</span></div></div><span class="material-symbols-outlined text-secondary text-[16px]">unfold_more</span></div><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-colors shadow-sm"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">add</span><span class="font-label-md text-label-md">New Conversation</span></div><span class="px-1.5 py-0.5 rounded bg-primary text-on-primary-container font-label-xs text-label-xs opacity-90">⌘K</span></button></div><nav class="px-space-sm flex flex-col gap-0.5" data-active-classes="bg-secondary-container text-on-secondary-fixed font-semibold rounded-lg"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="assistant" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span class="font-body-md text-body-md">Assistant</span></div><span class="w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="my-tasks" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">check_box</span><span class="font-body-md text-body-md">My Tasks</span></div><span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs">4</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="schedule" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-body-md text-body-md">Schedule</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="grocery-list" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">shopping_bag</span><span class="font-body-md text-body-md">Grocery List</span></div><span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs">3</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="household-memory" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">group</span><span class="font-body-md text-body-md">Household & Memory</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 transition-all bg-secondary-container text-on-secondary-fixed font-semibold rounded-lg" data-path="plan-review" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">assignment_turned_in</span><span class="font-body-md text-body-md">Plan Review</span></div></a></nav></div><div class="flex flex-col p-space-sm gap-space-sm border-t border-outline-variant"><div class="p-space-sm rounded-lg bg-surface-container-low border border-outline-variant flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface font-medium">Household Pulse</span><span class="font-label-xs text-label-xs text-primary-container font-semibold">68% synced</span></div><div class="w-full h-1.5 rounded-full bg-secondary-container overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 68%"></div></div><div class="flex items-center justify-between pt-1"><span class="font-label-xs text-label-xs text-secondary">4 of 6 daily cycles done</span><div class="flex -space-x-1.5 overflow-hidden"><div class="w-4 h-4 rounded-full bg-secondary-fixed flex items-center justify-center text-[8px] font-bold text-on-secondary-fixed ring-1 ring-surface-container-lowest">M</div><div class="w-4 h-4 rounded-full bg-primary-fixed flex items-center justify-center text-[8px] font-bold text-on-primary-fixed ring-1 ring-surface-container-lowest">L</div><div class="w-4 h-4 rounded-full bg-tertiary-fixed flex items-center justify-center text-[8px] font-bold text-on-tertiary-fixed ring-1 ring-surface-container-lowest">S</div></div></div></div><div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9d_k3Qgns-s-_eMdvQGWwfp4z2xtJEkXctImN_NntuQwNFYslLfoaBXIwq9ZUX8hlWLwp9lKa6eEUQSaWrPm3Lx14DGwDyw-ePR3G3gtpbQoArmdS144tXM89pU91l8-6iesydR2YkemT2LGaJEfQmY0Fjy63LqTQbEu2t_Ag-9OcfTeXH4KrY_NnTORQSXT0-q1QoernyO9B8tO1bMUnM5Y9kNn8INSLoVJpaWF2Xmb_BoPb1VEhuw"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Sarah Miller</span><span class="font-label-xs text-label-xs text-secondary leading-tight">Coordinator</span></div></div><a class="p-1 text-secondary hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span></a></div></div></aside><div class="pl-60"><header class="fixed top-0 left-60 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant z-40 px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-[16px]">home_work</span><span>The Miller Residence</span><span class="text-outline-variant">/</span><span class="text-on-surface font-semibold">Operations Engine</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-secondary text-[18px]">search</span><input class="pl-8 pr-3 py-1.5 w-64 rounded-lg bg-surface-container-low border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Search tasks, inventory, notes... (⌘K)" type="text"/></div><button class="p-2 text-secondary hover:text-on-surface rounded-lg hover:bg-surface-container-low transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary-container"></span></button><div class="h-4 w-px bg-outline-variant"></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9d_k3Qgns-s-_eMdvQGWwfp4z2xtJEkXctImN_NntuQwNFYslLfoaBXIwq9ZUX8hlWLwp9lKa6eEUQSaWrPm3Lx14DGwDyw-ePR3G3gtpbQoArmdS144tXM89pU91l8-6iesydR2YkemT2LGaJEfQmY0Fjy63LqTQbEu2t_Ag-9OcfTeXH4KrY_NnTORQSXT0-q1QoernyO9B8tO1bMUnM5Y9kNn8INSLoVJpaWF2Xmb_BoPb1VEhuw"/></div></header><main class="relative pt-16 min-h-screen bg-background w-full px-gutter-desktop py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Utility Context / Staging Notice -->
+<div class="mb-space-lg flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm text-secondary font-label-md text-label-md">
+<div class="flex items-center gap-space-xs">
+<span class="hover:text-primary transition-colors cursor-pointer">Assistant</span>
+<span class="text-outline">/</span>
+<span class="text-on-surface font-semibold tracking-wide">Plan Review #HP-892</span>
+<span class="ml-space-xs px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed text-label-xs font-label-xs tracking-wider uppercase font-semibold">Staged Draft</span>
+</div>
+<div class="flex items-center gap-space-sm font-label-xs text-label-xs text-secondary">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span> Copilot Auto-Engine v2.4</span>
+<span class="text-outline">•</span>
+<span>Generated 4 mins ago</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-space-xs">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Review & Confirm Household Plan</h1>
+<p class="font-body-lg text-body-lg text-secondary flex items-center gap-2 mt-1">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary-container"></span>
+          Dinner Guests Preparation • Tonight at 7:00 PM
+        </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-sm" id="discardPlanTopBtn">
+<span class="material-symbols-outlined text-[16px]">close</span> Discard
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-all shadow-sm flex items-center gap-1.5" id="editParamsBtn">
+<span class="material-symbols-outlined text-[16px]">tune</span> Edit Parameters
+        </button>
+</div>
+</div>
+<!-- Safety Banner -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex items-start sm:items-center gap-space-md mt-space-xs">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-primary">Staging Mode Active</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-secondary text-label-xs font-label-xs">No write actions committed</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          No calendar events, automated family reminders, or grocery items will be modified until you confirm below.
+        </p>
+</div>
+<span class="material-symbols-outlined text-secondary hidden sm:inline text-[20px]">lock_clock</span>
+</div>
+</div>
+<!-- Main Grid Content: Canvas Left (Actions/Rationale) + Right Inspector Dock -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left Workspace (Col 8) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Plan Overview & AI Rationale Card -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="p-1.5 rounded-lg bg-secondary-container text-primary">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Synthesis & Optimization Strategy</h2>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-semibold tracking-wide">98% Fit Score</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low text-on-surface-variant flex flex-col gap-space-xs">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+            Why this plan?
+          </div>
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+            HomePilot grouped chores logically before guest arrival at 7:00 PM, deferred heavy floor care until David's 6:00 PM arrival to protect fresh rugs, and queued required ingredients to sync with Sarah's errand slot.
+          </p>
+</div>
+<!-- Metric Badges Row -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-high/60 flex flex-col">
+<span class="font-label-xs text-label-xs text-secondary font-semibold uppercase tracking-wider">Proposed Actions</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">4 Items</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high/60 flex flex-col">
+<span class="font-label-xs text-label-xs text-secondary font-semibold uppercase tracking-wider">Grocery Impact</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">+1 Item</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high/60 flex flex-col">
+<span class="font-label-xs text-label-xs text-secondary font-semibold uppercase tracking-wider">Family Members</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">2 Involved</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high/60 flex flex-col">
+<span class="font-label-xs text-label-xs text-secondary font-semibold uppercase tracking-wider">Total Est. Duration</span>
+<span class="font-headline-md text-headline-md text-primary mt-1">1h 45m</span>
+</div>
+</div>
+</div>
+<!-- Ordered Actions Workspace -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Execution Sequence</h3>
+<span class="text-label-xs font-label-xs px-2 py-0.5 rounded-full bg-surface-container-high text-secondary">Chronological</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary">Hover items to adjust parameters</span>
+</div>
+<div class="flex flex-col gap-space-sm" id="actionItemsContainer">
+<!-- Action 1: Grocery -->
+<div class="group p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold shrink-0 mt-0.5">
+                01
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-secondary-fixed text-on-secondary-fixed">
+                    GROCERY
+                  </span>
+<span class="font-label-xs text-label-xs text-secondary">Immediate Sync</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Add Basmati Rice (2 lb) to Grocery List</h4>
+<div class="flex flex-wrap items-center gap-space-sm mt-1 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">inventory_2</span> Category: Pantry</span>
+<span>•</span>
+<span class="text-primary font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">route</span> Auto-routed to Safeway Trip</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-sm shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-outline-variant/30">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface font-label-xs text-label-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Pantry Runner</span>
+</div>
+<div class="flex items-center gap-1 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit Action">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Change Assignee">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors" title="Remove Action">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action 2: Task -->
+<div class="group p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold shrink-0 mt-0.5">
+                02
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-primary-container text-on-primary">
+                    TASK
+                  </span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold uppercase bg-error-container text-on-error-container">Priority: High</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Living room declutter & surface wipe-down</h4>
+<div class="flex flex-wrap items-center gap-space-sm mt-1 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1 font-medium text-on-surface"><span class="material-symbols-outlined text-[14px]">schedule</span> 4:15 PM – 5:00 PM (45m)</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">person</span> Sarah Miller</span>
+<span>•</span>
+<span class="text-secondary font-medium">Dependencies: None • Ready now</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-sm shrink-0 pt-2 sm:pt-0">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-xs text-label-xs">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="Portrait of Sarah Miller looking composed and organized with soft studio light against a clean neutral wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxwtLWVYZs80U5yd_FZwODHItHvB0XHQAqVf-Is1p8E33o9cwRf-LRxwk-DC3Yr14NrkFbw86RKn8bYBQLJI8gXPiS6wE9Qft9pUNwKBZkazwY8P2C51BJncNUro1iGEOm0tpn3vPJZtwjFHYByBvSfMg5F0d8AurVkxk0HF9jzAzLvBf5QN7LjcOiNfbqWneVW56OujfDGbWnJF1DzHRHJJu59VZ6hSbNtrXKQPEjz-Fw9rWFeg0a-w"/>
+<span>Sarah (Lead)</span>
+</div>
+<div class="flex items-center gap-1 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit Action">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Change Assignee">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors" title="Remove Action">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action 3: Scheduled Task with Conflict Awareness -->
+<div class="group p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold shrink-0 mt-0.5">
+                  03
+                </div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-tertiary text-on-tertiary">
+                      SCHEDULED TASK
+                    </span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold uppercase bg-surface-container-highest text-secondary">Priority: Medium</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Vacuum carpets & beverage station setup</h4>
+<div class="flex flex-wrap items-center gap-space-sm mt-1 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1 font-medium text-on-surface"><span class="material-symbols-outlined text-[14px]">schedule</span> 6:00 PM – 6:30 PM (30m)</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">person</span> David Miller</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-sm shrink-0">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs">
+<div class="w-4 h-4 rounded-full bg-tertiary-container flex items-center justify-center text-[9px] text-on-tertiary-container font-bold">D</div>
+<span>David</span>
+</div>
+<div class="flex items-center gap-1 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit Action">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Change Assignee">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors" title="Remove Action">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Conflict Note Box -->
+<div class="p-space-sm rounded-lg bg-tertiary-fixed/30 flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[18px]">warning</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<span class="font-semibold text-tertiary">Transit Dependency:</span> Dependent on David's arrival at 6:00 PM sharp. 15-minute buffer before table setup starts.
+              </p>
+</div>
+</div>
+<!-- Action 4: Coordination -->
+<div class="group p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold shrink-0 mt-0.5">
+                04
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-secondary text-on-secondary">
+                    COORDINATION
+                  </span>
+<span class="font-label-xs text-label-xs text-secondary">Final Assembly</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Table settings, guest glassware, and background playlist</h4>
+<div class="flex flex-wrap items-center gap-space-sm mt-1 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1 font-medium text-on-surface"><span class="material-symbols-outlined text-[14px]">schedule</span> 6:30 PM – 6:50 PM (20m)</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">group</span> Shared (Sarah & David)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-sm shrink-0 pt-2 sm:pt-0">
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[14px] text-primary">handshake</span>
+<span>Both Parents</span>
+</div>
+<div class="flex items-center gap-1 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit Action">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Change Assignee">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors" title="Remove Action">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Grocery Impact Preview Box -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="p-1.5 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[18px]">local_grocery_store</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Grocery Impact Preview</h3>
+<p class="font-body-sm text-body-sm text-secondary">Items to be staged to the Miller Master Grocery List</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-xs text-label-xs">1 Delta Detected</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm mt-1">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined">set_meal</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Basmati Rice (2 lb)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary text-label-xs font-label-xs">Pantry</span>
+</div>
+<span class="font-body-sm text-body-sm text-primary font-medium mt-0.5">Tagged: ‘From Dinner Guests Plan’</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end sm:self-auto font-label-xs text-label-xs text-secondary">
+<span class="px-2 py-1 rounded bg-surface-container-lowest">Qty: 1 Unit</span>
+<span class="material-symbols-outlined text-primary text-[18px]">sync_alt</span>
+<span>Safeway Shared Cart</span>
+</div>
+</div>
+</div>
+<!-- Prominent Sticky/Footer Confirmation Controls Bar -->
+<div class="sticky bottom-4 z-30 p-space-md rounded-xl bg-surface-container-lowest/95 backdrop-blur-md shadow-xl flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-secondary font-label-xs text-label-xs px-1">
+<span class="material-symbols-outlined text-[14px] text-primary">info</span>
+<span>Once confirmed, tasks will appear in <strong class="text-on-surface font-semibold">My Tasks</strong> and David will receive a sync reminder at <strong class="text-on-surface font-semibold">5:45 PM</strong>.</span>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-dim text-secondary hover:text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" id="discardPlanBtn">
+              Discard Plan
+            </button>
+<button class="flex-1 sm:flex-none px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-dim text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" id="editParametersFooterBtn">
+<span class="material-symbols-outlined text-[16px]">tune</span> Edit Parameters
+            </button>
+</div>
+<button class="w-full sm:w-auto px-space-xl py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all shadow-md font-headline-sm text-headline-sm flex items-center justify-center gap-2" id="confirmAllBtn">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Confirm All Actions</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Contextual Dossier / Inspector Dock (Col 4) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Household Impact Card -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">Household Impact</h3>
+<span class="p-1 text-secondary"><span class="material-symbols-outlined text-[18px]">balance</span></span>
+</div>
+<!-- Workload Distribution Bars -->
+<div class="flex flex-col gap-space-md">
+<!-- Sarah -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+<span class="font-medium text-on-surface">Sarah Miller</span>
+</div>
+<span class="font-bold text-on-surface">65 min <span class="text-secondary font-normal">(62%)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 62%;"></div>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs text-secondary">
+<span>Living Room (45m) + Table Set (20m)</span>
+<span>Available bandwidth: High</span>
+</div>
+</div>
+<!-- David -->
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-tertiary-container"></div>
+<span class="font-medium text-on-surface">David Miller</span>
+</div>
+<span class="font-bold text-on-surface">40 min <span class="text-secondary font-normal">(38%)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 38%;"></div>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs text-secondary">
+<span>Vacuum & Bar (30m) + Assist (10m)</span>
+<span>Arrival target: 6:00 PM</span>
+</div>
+</div>
+</div>
+<!-- Readiness Gauge / Mini Visualizer -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between mt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs uppercase font-semibold tracking-wider text-secondary">Target Readiness</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">100% Guest-Ready</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">By 6:50 PM (10m buffer)</span>
+</div>
+<!-- Inline Visual Ring (SVG under 1KB) -->
+<div class="relative w-14 h-14 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="100, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="material-symbols-outlined text-primary text-[20px] absolute">celebration</span>
+</div>
+</div>
+</div>
+<!-- Guest Experience Context Card -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Event Context & Preferences</h3>
+<div class="flex flex-col gap-space-sm text-body-sm font-body-sm">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-high/40">
+<span class="text-secondary">Expected Guests:</span>
+<span class="font-semibold text-on-surface">The Chengs (2 adults, 1 teen)</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-high/40">
+<span class="text-secondary">Dietary Flags:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-xs font-semibold">Gluten-Sensitive (Leo)</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-high/40">
+<span class="text-secondary">Ambience Audio:</span>
+<span class="font-medium text-on-surface">‘Warm Acoustic Living Room’</span>
+</div>
+</div>
+<!-- Ambient Domestic Snapshot Placeholders -->
+<div class="pt-space-xs">
+<span class="font-label-xs text-label-xs uppercase font-semibold text-secondary tracking-wider block mb-2">Dinner Vibe Palette</span>
+<div class="grid grid-cols-2 gap-space-sm">
+<img class="w-full h-24 rounded-lg object-cover shadow-sm" data-alt="A warm dining table arrangement with natural linen runners, simple ceramics, tapered candles, and gentle ambient evening daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkG2C9nngUvZQcROJStwecgA3CKo0uZRhPwNdJWW15nkgtjMkaBx_e27B5iLXSAc-QJpfGpU7EJu8ConphoEkm87taSBb_1820IbC6Qx7X0jBbM1mbXVeB7CXYL39oqUpv4HkXLCA0Exy5z-sRshMO01C3QWUjA8gos2jJmbg7HZI91OvtuJo9KDxWIKH-NZS537aGeUCTffJ573J8cCiBUTAgRCxSLpgtPDcRsWvt2_PPQQ2UVE0Mhw"/>
+<img class="w-full h-24 rounded-lg object-cover shadow-sm" data-alt="Close up of a tidy welcoming entryway and decluttered living space with indoor green plants and subtle warm lamp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDF_5mdPu0THPtzprq4_8NANW0R7uDFCTbgzKi3pWPPA5NyWdVa29eNyeyxzisExMTc7UBzpCUfN5QEPvkSGEw_FKNdn5J0io-SN3XXUIeJNZ65YxAgypK4V9WJHjaGVNJ3tXUyLzgoqFQLiq2elm5s2KKpkZ8k3goHsyfBihatXnx8acSPJLVpXP0xCBRsOBNHXJ2XxOkbA7lvViTlTmWJI0uZzO_COnVGd5bW-wDa6Ga74Vw3FD2YQ"/>
+</div>
+</div>
+</div>
+<!-- Copilot Feedback Note -->
+<div class="p-space-md rounded-xl bg-surface-container-high/50 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">tips_and_updates</span>
+<div class="flex flex-col text-on-surface">
+<span class="font-label-sm text-label-sm font-semibold">Adaptive Re-routing Enabled</span>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+            If David is delayed past 6:15 PM via location pulse, HomePilot will prompt Sarah to swap beverage prep with rice steaming automatically.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Simulation Container (Hidden by default) -->
+<div class="fixed top-20 right-8 z-50 transform translate-y-4 opacity-0 pointer-events-none transition-all duration-300 p-space-md rounded-xl bg-inverse-surface text-inverse-on-surface shadow-2xl flex items-center gap-space-md max-w-md" id="confirmationToast">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm">Plan HP-892 Activated!</span>
+<span class="font-body-sm text-body-sm text-surface-container-highest">Tasks injected into family queues and Safeway basket updated.</span>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const confirmBtn = document.getElementById('confirmAllBtn');
+    const toast = document.getElementById('confirmationToast');
+    const discardBtns = [document.getElementById('discardPlanBtn'), document.getElementById('discardPlanTopBtn')];
+    const editBtns = [document.getElementById('editParamsBtn'), document.getElementById('editParametersFooterBtn')];
+
+    // Confirmation Toast Feedback
+    if (confirmBtn && toast) {
+      confirmBtn.addEventListener('click', function () {
+        confirmBtn.disabled = true;
+        confirmBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">refresh</span> <span>Committing to Family Ledger...</span>';
+        
+        setTimeout(() => {
+          confirmBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span> <span>Plan Confirmed</span>';
+          confirmBtn.classList.remove('bg-primary-container', 'hover:bg-primary');
+          confirmBtn.classList.add('bg-secondary', 'cursor-default');
+
+          // Trigger Toast
+          toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+          toast.classList.add('opacity-100', 'translate-y-0');
+
+          setTimeout(() => {
+            toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            toast.classList.remove('opacity-100', 'translate-y-0');
+          }, 4500);
+        }, 900);
+      });
+    }
+
+    // Discard Interaction Simulation
+    discardBtns.forEach(btn => {
+      if (btn) {
+        btn.addEventListener('click', () => {
+          if (confirm('Discard this staged preparation plan? Staged grocery items and scheduled chore blocks will be cleared.')) {
+            const container = document.getElementById('actionItemsContainer');
+            if (container) {
+              container.style.opacity = '0.35';
+              container.style.pointerEvents = 'none';
+            }
+          }
+        });
+      }
+    });
+
+    // Edit Parameters Interaction Simulation
+    editBtns.forEach(btn => {
+      if (btn) {
+        btn.addEventListener('click', () => {
+          alert('Opening Plan Optimizer parameters: You can adjust guest arrival time, member assignment thresholds, or chore strictness.');
+        });
+      }
+    });
+  })();
+</script></main></div></body></html>

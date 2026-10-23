@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-tertiary-container":"#fff1e9","tertiary-container":"#a95b00","on-primary":"#ffffff","surface-container-low":"#edf4ff","tertiary-fixed":"#ffdcc3","on-background":"#121c26","outline":"#6e7977","surface-dim":"#d1dbe9","secondary":"#54615d","on-secondary-fixed":"#121e1b","primary":"#00625c","primary-container":"#177c75","tertiary-fixed-dim":"#ffb77d","on-primary-fixed":"#00201e","secondary-fixed-dim":"#bccac5","on-primary-container":"#c3fff8","on-error-container":"#93000a","on-surface-variant":"#3e4947","on-surface":"#121c26","surface-bright":"#f7f9ff","secondary-container":"#d8e6e1","inverse-on-surface":"#e8f2ff","primary-fixed":"#9af2e9","on-primary-fixed-variant":"#00504b","surface-tint":"#006a64","primary-fixed-dim":"#7ed5cd","on-tertiary-fixed-variant":"#6e3900","inverse-primary":"#7ed5cd","surface-container-highest":"#d9e3f1","on-tertiary":"#ffffff","surface":"#f7f9ff","on-error":"#ffffff","surface-container-high":"#dfe9f7","on-secondary":"#ffffff","tertiary":"#854600","error-container":"#ffdad6","on-secondary-container":"#5a6763","on-tertiary-fixed":"#2f1500","error":"#ba1a1a","surface-container-lowest":"#ffffff","background":"#f7f9ff","inverse-surface":"#27313c","outline-variant":"#bdc9c7","on-secondary-fixed-variant":"#3d4946","surface-variant":"#d9e3f1","surface-container":"#e4effd","secondary-fixed":"#d8e6e1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin":"1rem","gutter":"1rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-xl":"2rem","margin-desktop":"2rem"},"fontFamily":{"body-lg":["Inter"],"label-sm":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"label-md":["Inter"],"body-sm":["Inter"],"label-xs":["Inter"],"headline-xl":["Inter"],"headline-sm":["Inter"]},"fontSize":{"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-xs":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-60 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 px-space-md border-b border-outline-variant flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="HomePilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xcvw_YXP0PyxWjShvDy4LfWnO13s74_cGHaREBLgZYkHx20UEwLqG9o4zJDtFBFj0C-Gwrv9EUC3EP9CWpg--s9vxpRUHfxuIBT-kQnsDpNYsjgbXplj0eOGMFoXW4ec7tZf6x5-DNloVJO9VRUURb6XfGLzeKn_8LDIElwzRCEAiLU0t1fhxPolZhESisqF99TiknkVImkMJZYGJ3cE0EwdpXWFNn0llj9XjxP7Ia13XnnB3tWy_5uAL6"/><span class="font-headline-sm text-headline-sm text-on-surface">HomePilot AI</span></div><span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-xs text-label-xs">v1.0</span></div><div class="p-space-md flex flex-col gap-space-sm"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[18px]">home</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">The Miller Household</span><span class="font-label-xs text-label-xs text-secondary">4 Members Active</span></div></div><span class="material-symbols-outlined text-secondary text-[16px]">unfold_more</span></div><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-colors shadow-sm"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">add</span><span class="font-label-md text-label-md">New Conversation</span></div><span class="px-1.5 py-0.5 rounded bg-primary text-on-primary-container font-label-xs text-label-xs opacity-90">⌘K</span></button></div><nav class="px-space-sm flex flex-col gap-0.5" data-active-classes="bg-secondary-container text-on-secondary-fixed font-semibold rounded-lg"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 transition-all bg-secondary-container text-on-secondary-fixed font-semibold rounded-lg" data-path="assistant" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span class="font-body-md text-body-md">Assistant</span></div><span class="w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="my-tasks" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">check_box</span><span class="font-body-md text-body-md">My Tasks</span></div><span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs">4</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="schedule" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-body-md text-body-md">Schedule</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="grocery-list" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">shopping_bag</span><span class="font-body-md text-body-md">Grocery List</span></div><span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs">3</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="household-memory" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">group</span><span class="font-body-md text-body-md">Household & Memory</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="plan-review" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">assignment_turned_in</span><span class="font-body-md text-body-md">Plan Review</span></div></a></nav></div><div class="flex flex-col p-space-sm gap-space-sm border-t border-outline-variant"><div class="p-space-sm rounded-lg bg-surface-container-low border border-outline-variant flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface font-medium">Household Pulse</span><span class="font-label-xs text-label-xs text-primary-container font-semibold">68% synced</span></div><div class="w-full h-1.5 rounded-full bg-secondary-container overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 68%"></div></div><div class="flex items-center justify-between pt-1"><span class="font-label-xs text-label-xs text-secondary">4 of 6 daily cycles done</span><div class="flex -space-x-1.5 overflow-hidden"><div class="w-4 h-4 rounded-full bg-secondary-fixed flex items-center justify-center text-[8px] font-bold text-on-secondary-fixed ring-1 ring-surface-container-lowest">M</div><div class="w-4 h-4 rounded-full bg-primary-fixed flex items-center justify-center text-[8px] font-bold text-on-primary-fixed ring-1 ring-surface-container-lowest">L</div><div class="w-4 h-4 rounded-full bg-tertiary-fixed flex items-center justify-center text-[8px] font-bold text-on-tertiary-fixed ring-1 ring-surface-container-lowest">S</div></div></div></div><div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9d_k3Qgns-s-_eMdvQGWwfp4z2xtJEkXctImN_NntuQwNFYslLfoaBXIwq9ZUX8hlWLwp9lKa6eEUQSaWrPm3Lx14DGwDyw-ePR3G3gtpbQoArmdS144tXM89pU91l8-6iesydR2YkemT2LGaJEfQmY0Fjy63LqTQbEu2t_Ag-9OcfTeXH4KrY_NnTORQSXT0-q1QoernyO9B8tO1bMUnM5Y9kNn8INSLoVJpaWF2Xmb_BoPb1VEhuw"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Sarah Miller</span><span class="font-label-xs text-label-xs text-secondary leading-tight">Coordinator</span></div></div><a class="p-1 text-secondary hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span></a></div></div></aside><div class="pl-60"><header class="fixed top-0 left-60 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant z-40 px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-[16px]">home_work</span><span>The Miller Residence</span><span class="text-outline-variant">/</span><span class="text-on-surface font-semibold">Operations Engine</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-secondary text-[18px]">search</span><input class="pl-8 pr-3 py-1.5 w-64 rounded-lg bg-surface-container-low border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Search tasks, inventory, notes... (⌘K)" type="text"/></div><button class="p-2 text-secondary hover:text-on-surface rounded-lg hover:bg-surface-container-low transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary-container"></span></button><div class="h-4 w-px bg-outline-variant"></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9d_k3Qgns-s-_eMdvQGWwfp4z2xtJEkXctImN_NntuQwNFYslLfoaBXIwq9ZUX8hlWLwp9lKa6eEUQSaWrPm3Lx14DGwDyw-ePR3G3gtpbQoArmdS144tXM89pU91l8-6iesydR2YkemT2LGaJEfQmY0Fjy63LqTQbEu2t_Ag-9OcfTeXH4KrY_NnTORQSXT0-q1QoernyO9B8tO1bMUnM5Y9kNn8INSLoVJpaWF2Xmb_BoPb1VEhuw"/></div></header><main class="relative pt-16 min-h-screen bg-background w-full px-gutter-desktop py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Command Action Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">HomePilot Assistant</h1>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium tracking-wide">Simulated Household Copilot • In Sync</span>
+</div>
+</div>
+<span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-xs text-label-xs shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">verified_user</span>
+        Household Memory Active
+      </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+        Export Plan
+      </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+        Clear History
+      </button>
+</div>
+</div>
+<!-- Primary Workspace Layout: Conversation Canvas + Live Context Dock -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left/Center Working Canvas: Copilot Stream (8 Cols on XL) -->
+<section class="xl:col-span-8 flex flex-col space-y-space-lg">
+<!-- Conversation History Container -->
+<div class="flex flex-col space-y-space-md">
+<!-- Assistant Initial Prompt / Greeting Message -->
+<div class="flex items-start gap-space-md group">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div class="flex flex-col max-w-2xl bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-md text-label-md font-semibold text-primary">HomePilot Engine</span>
+<span class="font-label-xs text-label-xs text-secondary">08:00 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              Good morning Sarah. I'm actively monitoring your household schedule, active tasks, and pantry stock levels. What would you like to coordinate today?
+            </p>
+</div>
+</div>
+<!-- User Inquiry Message -->
+<div class="flex items-start justify-end gap-space-md">
+<div class="flex flex-col items-end max-w-xl">
+<div class="bg-secondary-container text-on-secondary-fixed p-space-md rounded-xl shadow-sm">
+<p class="font-body-md text-body-md font-normal text-on-surface">
+                “We have guests coming at 7 PM. We're out of rice, the living room needs cleaning, and my brother cannot help until 6 PM.”
+              </p>
+</div>
+<div class="flex items-center gap-1.5 mt-1 mr-1">
+<span class="font-label-xs text-label-xs text-secondary">10:14 AM • Delivered from Desktop</span>
+<span class="material-symbols-outlined text-[13px] text-primary">done_all</span>
+</div>
+</div>
+<div class="w-9 h-9 rounded-lg overflow-hidden flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait of Sarah, a warm coordinator with dark hair tied back, natural domestic lighting in a modern home office with neutral teal walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgPEimVFcrVmfXBY6x4oFdnK48CusOTcxiNg_2yGx89yUGQ6r0yjTJuKlW2-UXuokvAun4H2L4QAIUF2Ddks_YVD7co8bT3LzbtULczpuxDE4TLnMAaEvHi9tgqtHGqNH9uzn8OP5MMdOujxKd87SySbu8qilL7f0IkKVEpRGwLIGORUn8SqCfQL1HcopJiwWmV5mjjTOW4Lhj_6xQ3X2f8OUiUKRkuD-Ke-H2PArGzAuky-VjyIZ2GA"/>
+</div>
+</div>
+<!-- Assistant Synthesized Response + Structured Plan -->
+<div class="flex items-start gap-space-md group">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col flex-1 max-w-full space-y-space-md">
+<!-- Conversational Introduction -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm max-w-2xl">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-md text-label-md font-semibold text-primary">HomePilot Engine</span>
+<span class="font-label-xs text-label-xs text-secondary">10:15 AM • Context resolved in 340ms</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                I've organized the essentials for tonight. Here's a plan that strictly respects David's calendar freeze and gets everything done with 10 minutes of buffer before 7:00 PM.
+              </p>
+</div>
+<!-- Structured Interactive Execution Plan Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md overflow-hidden relative">
+<div class="absolute -right-16 -top-16 w-44 h-44 bg-primary/5 rounded-full pointer-events-none"></div>
+<!-- Plan Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs tracking-wider uppercase font-semibold">Ready For Review</span>
+<span class="font-label-xs text-label-xs text-secondary">• Draft Version 1.0</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1 flex items-center gap-1.5">
+<span class="text-tertiary font-bold">⚡</span> Proposed Plan: Get Ready for Guests
+                  </h2>
+<p class="font-label-sm text-label-sm text-secondary mt-0.5">
+                    Target completion: 6:50 PM • 4 synchronized actions across 2 household members
+                  </p>
+</div>
+<div class="flex items-center gap-2 self-start sm:self-center">
+<span class="flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                    2h 35m total span
+                  </span>
+</div>
+</div>
+<!-- Constraint Alert / Warning Pill -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-tertiary-fixed/30 text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-tertiary text-[20px] flex-shrink-0 mt-0.5">event_busy</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary">Calendar Conflict Enforced</span>
+<span class="font-body-sm text-body-sm text-on-surface">
+                    Brother (David) is marked unavailable until 6:00 PM due to client sprint calls. Tasks shifted to his window.
+                  </span>
+</div>
+</div>
+<!-- Action Items List with Rich Metadata -->
+<div class="space-y-space-xs">
+<!-- Action 1: Grocery Addition -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors gap-space-sm group">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center flex-shrink-0 mt-0.5 text-[11px] font-bold">
+                      1
+                    </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium truncate">Add Basmati Rice to Pantry Grocery List</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-xs text-label-xs">Pantry Auto-Order</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary mt-0.5">
+                        Will link to Instacart delivery or mark for immediate stopover. Stock: 0 remaining.
+                      </span>
+</div>
+</div>
+<div class="flex items-center gap-3 self-end sm:self-center flex-shrink-0">
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest text-primary font-label-xs text-label-xs font-semibold shadow-sm">
+                      Ready to Add
+                    </span>
+<button class="text-secondary hover:text-on-surface p-1 rounded hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Action 2: Cleaning Sarah -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors gap-space-sm group">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center flex-shrink-0 mt-0.5 text-[11px] font-bold">
+                      2
+                    </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium truncate">Tidy & declutter living room</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-xs text-label-xs font-medium">Priority High</span>
+</div>
+<div class="flex items-center gap-2 text-secondary font-label-xs text-label-xs mt-0.5">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span> 4:15 PM – 5:00 PM (45m)
+                        </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">person</span> Assignee: Sarah Miller
+                        </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 self-end sm:self-center flex-shrink-0">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center font-label-xs text-label-xs font-bold text-on-primary-fixed">SM</span>
+<button class="text-secondary hover:text-on-surface p-1 rounded hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Action 3: Brother's Delayed Window -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors gap-space-sm group">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center flex-shrink-0 mt-0.5 text-[11px] font-bold">
+                      3
+                    </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium truncate">Vacuum living room & prep drink station</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-xs text-label-xs font-medium">Availability Confirmed</span>
+</div>
+<div class="flex items-center gap-2 text-secondary font-label-xs text-label-xs mt-0.5">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[13px]">lock_clock</span> 6:00 PM – 6:30 PM (30m)
+                        </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">person</span> Assignee: David Miller
+                        </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 self-end sm:self-center flex-shrink-0">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center font-label-xs text-label-xs font-bold text-on-secondary-fixed">DM</span>
+<button class="text-secondary hover:text-on-surface p-1 rounded hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Action 4: Coordinated Setup -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors gap-space-sm group">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center flex-shrink-0 mt-0.5 text-[11px] font-bold">
+                      4
+                    </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium truncate">Set dining table & ambient lighting</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs">Final Polish</span>
+</div>
+<div class="flex items-center gap-2 text-secondary font-label-xs text-label-xs mt-0.5">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span> 6:30 PM – 6:50 PM (20m)
+                        </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">groups</span> Assignee: Sarah & David
+                        </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 self-end sm:self-center flex-shrink-0">
+<div class="flex -space-x-1.5">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center font-label-xs text-label-xs font-bold text-on-primary-fixed shadow-sm">SM</span>
+<span class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center font-label-xs text-label-xs font-bold text-on-secondary-fixed shadow-sm">DM</span>
+</div>
+<button class="text-secondary hover:text-on-surface p-1 rounded hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Clarification & Delegation Note Box -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">contact_support</span>
+<span class="font-body-sm text-body-sm text-on-surface">
+                    Would you like me to ping David automatically at <strong>5:45 PM</strong> with his specific checklist via SMS?
+                  </span>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-primary hover:bg-primary-container hover:text-on-primary font-label-xs text-label-xs transition-colors shadow-sm font-semibold">
+                    Yes, auto-ping
+                  </button>
+<button class="px-2 py-1 text-secondary hover:text-on-surface font-label-xs text-label-xs">
+                    Skip
+                  </button>
+</div>
+</div>
+<!-- Bottom Confirmation CTAs -->
+<div class="flex flex-col sm:flex-row items-center justify-between pt-space-xs gap-space-sm">
+<div class="flex items-center gap-space-xs w-full sm:w-auto">
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-headline-sm text-headline-sm transition-all shadow-md group">
+<span>Review & Confirm Plan</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+                    Adjust Plan
+                  </button>
+</div>
+<button class="text-secondary hover:text-error font-label-md text-label-md transition-colors self-center">
+                  Dismiss Plan
+                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Suggested Follow-up Prompts Chips -->
+<div class="flex items-center gap-2 flex-wrap pt-space-xs">
+<span class="font-label-xs text-label-xs text-secondary uppercase font-semibold">Suggested follow-ups:</span>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-xs text-label-xs flex items-center gap-1 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">send</span>
+          Notify David now
+        </button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-xs text-label-xs flex items-center gap-1 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary">add_shopping_cart</span>
+          Add sparkling wine to grocery list
+        </button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-xs text-label-xs flex items-center gap-1 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[14px]">update</span>
+          Shift dinner to 7:30 PM
+        </button>
+</div>
+<!-- Docked Prompt Composer Container -->
+<div class="relative bg-surface-container-lowest rounded-xl shadow-md p-space-sm flex flex-col gap-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-2 ml-1">auto_awesome</span>
+<textarea class="w-full bg-transparent resize-none font-body-md text-body-md text-on-surface placeholder:text-secondary focus:outline-none p-1" placeholder="Message HomePilot or adjust instructions... (e.g. 'Ensure living room candles are lit before 6:45 PM')" rows="2"></textarea>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Attach file or screenshot">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Voice dictation">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Reference household inventory">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</button>
+<div class="h-4 w-px bg-outline-variant mx-1"></div>
+<span class="font-label-xs text-label-xs text-secondary hidden sm:inline-block">Model: Household Ops v3.2 • Synced</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-xs text-label-xs text-secondary hidden sm:inline-block">Press <kbd class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">⌘ + Enter</kbd></span>
+<button class="w-8 h-8 rounded-lg bg-primary-container hover:bg-primary text-on-primary flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Context Panel / Live Dossier Dock (4 Cols on XL ~320-360px) -->
+<aside class="xl:col-span-4 flex flex-col space-y-space-md">
+<!-- Primary Status Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">sync</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Live Context Sync</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container/10 text-primary-container font-label-xs text-label-xs font-semibold">Active</span>
+</div>
+<!-- Household Members Real-Time Availability -->
+<div class="space-y-space-xs">
+<span class="font-label-xs text-label-xs text-secondary uppercase font-semibold tracking-wider">Household Availability</span>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="relative">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center font-label-xs text-label-xs font-bold text-on-primary-fixed">SM</span>
+<span class="w-2 h-2 rounded-full bg-primary-container absolute bottom-0 right-0 ring-1 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Sarah Miller</span>
+<span class="font-label-xs text-label-xs text-secondary">Free • In Kitchen</span>
+</div>
+</div>
+<span class="font-label-xs text-label-xs text-primary font-semibold">Available</span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="relative">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center font-label-xs text-label-xs font-bold text-on-secondary-fixed">DM</span>
+<span class="w-2 h-2 rounded-full bg-tertiary-container absolute bottom-0 right-0 ring-1 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">David Miller</span>
+<span class="font-label-xs text-label-xs text-secondary">Work calls until 6:00 PM</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-xs text-label-xs flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+              Locked
+            </span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="relative">
+<span class="w-7 h-7 rounded-full bg-tertiary-fixed flex items-center justify-center font-label-xs text-label-xs font-bold text-on-tertiary-fixed">LM</span>
+<span class="w-2 h-2 rounded-full bg-secondary-container absolute bottom-0 right-0 ring-1 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Leo Miller</span>
+<span class="font-label-xs text-label-xs text-secondary">Elementary school until 3:30 PM</span>
+</div>
+</div>
+<span class="font-label-xs text-label-xs text-secondary">Off-site</span>
+</div>
+</div>
+<!-- Tonight's Schedule Timeline Preview -->
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-secondary uppercase font-semibold tracking-wider">Tonight's Agenda</span>
+<span class="font-label-xs text-label-xs text-primary font-medium cursor-pointer hover:underline">View Calendar</span>
+</div>
+<div class="space-y-2 relative pl-3 before:absolute before:left-1 before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant">
+<div class="relative flex items-center justify-between text-body-sm pl-2">
+<span class="w-2 h-2 rounded-full bg-outline absolute -left-3.5"></span>
+<span class="font-label-md text-label-md text-secondary">3:30 PM</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate ml-2">Leo bus pickup</span>
+</div>
+<div class="relative flex items-center justify-between text-body-sm pl-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container absolute -left-3.5"></span>
+<span class="font-label-md text-label-md text-tertiary font-semibold">6:00 PM</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate ml-2">David wraps conference calls</span>
+</div>
+<div class="relative flex items-center justify-between p-1.5 rounded bg-primary-container/10 text-on-surface pl-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container absolute -left-3.5 ring-2 ring-surface-container-lowest"></span>
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-label-md text-label-md text-primary font-bold">7:00 PM</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Guests Arrive (6 pax)</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[16px]">celebration</span>
+</div>
+</div>
+</div>
+<!-- Live Grocery Staging Area -->
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-secondary uppercase font-semibold tracking-wider">Pantry & Grocery Sync</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs">3 items</span>
+</div>
+<div class="space-y-1.5">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">fiber_manual_record</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Basmati Rice (5 lb)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-semibold">Pending confirmation</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low opacity-80">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Sparkling mineral water (x2)</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary">In Cart</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low opacity-80">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Extra virgin olive oil</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary">In Cart</span>
+</div>
+</div>
+</div>
+<!-- Safety & Guardrail Intent Box -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0 mt-0.5">shield</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Zero-Surprise Safety Guarantee</span>
+<p class="font-body-sm text-body-sm text-secondary leading-tight mt-0.5">
+              Nothing is finalized, billed, or alerted to David until you explicitly press <em>‘Review & Confirm Plan’</em>.
+            </p>
+</div>
+</div>
+</div>
+<!-- Copilot Health & Environmental Metrics Inset -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Home Environment Telemetry</span>
+<span class="font-label-xs text-label-xs text-secondary">Updated 2m ago</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-label-xs text-secondary">Living Room Temp</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">71°F</span>
+<span class="font-label-xs text-label-xs text-primary font-medium">Auto-prepping for 6:30 PM</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-xs text-label-xs text-secondary">Kitchen Robot Vacuum</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">Docked 100%</span>
+<span class="font-label-xs text-label-xs text-secondary">Scheduled post-prep</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div></main></div></body></html>

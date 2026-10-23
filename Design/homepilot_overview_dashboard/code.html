@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-tertiary-container":"#fff1e9","tertiary-container":"#a95b00","on-primary":"#ffffff","surface-container-low":"#edf4ff","tertiary-fixed":"#ffdcc3","on-background":"#121c26","outline":"#6e7977","surface-dim":"#d1dbe9","secondary":"#54615d","on-secondary-fixed":"#121e1b","primary":"#00625c","primary-container":"#177c75","tertiary-fixed-dim":"#ffb77d","on-primary-fixed":"#00201e","secondary-fixed-dim":"#bccac5","on-primary-container":"#c3fff8","on-error-container":"#93000a","on-surface-variant":"#3e4947","on-surface":"#121c26","surface-bright":"#f7f9ff","secondary-container":"#d8e6e1","inverse-on-surface":"#e8f2ff","primary-fixed":"#9af2e9","on-primary-fixed-variant":"#00504b","surface-tint":"#006a64","primary-fixed-dim":"#7ed5cd","on-tertiary-fixed-variant":"#6e3900","inverse-primary":"#7ed5cd","surface-container-highest":"#d9e3f1","on-tertiary":"#ffffff","surface":"#f7f9ff","on-error":"#ffffff","surface-container-high":"#dfe9f7","on-secondary":"#ffffff","tertiary":"#854600","error-container":"#ffdad6","on-secondary-container":"#5a6763","on-tertiary-fixed":"#2f1500","error":"#ba1a1a","surface-container-lowest":"#ffffff","background":"#f7f9ff","inverse-surface":"#27313c","outline-variant":"#bdc9c7","on-secondary-fixed-variant":"#3d4946","surface-variant":"#d9e3f1","surface-container":"#e4effd","secondary-fixed":"#d8e6e1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin":"1rem","gutter":"1rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-xl":"2rem","margin-desktop":"2rem"},"fontFamily":{"body-lg":["Inter"],"label-sm":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"label-md":["Inter"],"body-sm":["Inter"],"label-xs":["Inter"],"headline-xl":["Inter"],"headline-sm":["Inter"]},"fontSize":{"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-xs":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-60 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 px-space-md border-b border-outline-variant flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="HomePilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xcvw_YXP0PyxWjShvDy4LfWnO13s74_cGHaREBLgZYkHx20UEwLqG9o4zJDtFBFj0C-Gwrv9EUC3EP9CWpg--s9vxpRUHfxuIBT-kQnsDpNYsjgbXplj0eOGMFoXW4ec7tZf6x5-DNloVJO9VRUURb6XfGLzeKn_8LDIElwzRCEAiLU0t1fhxPolZhESisqF99TiknkVImkMJZYGJ3cE0EwdpXWFNn0llj9XjxP7Ia13XnnB3tWy_5uAL6"/><span class="font-headline-sm text-headline-sm text-on-surface">HomePilot AI</span></div><span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-xs text-label-xs">v1.0</span></div><div class="p-space-md flex flex-col gap-space-sm"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[18px]">home</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">The Miller Household</span><span class="font-label-xs text-label-xs text-secondary">4 Members Active</span></div></div><span class="material-symbols-outlined text-secondary text-[16px]">unfold_more</span></div><button class="w-full flex items-center justify-between px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-colors shadow-sm"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">add</span><span class="font-label-md text-label-md">New Conversation</span></div><span class="px-1.5 py-0.5 rounded bg-primary text-on-primary-container font-label-xs text-label-xs opacity-90">⌘K</span></button></div><nav class="px-space-sm flex flex-col gap-0.5" data-active-classes="bg-secondary-container text-on-secondary-fixed font-semibold rounded-lg"><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 transition-all bg-secondary-container text-on-secondary-fixed font-semibold rounded-lg" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="assistant" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span class="font-body-md text-body-md">Assistant</span></div><span class="w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="my-tasks" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">check_box</span><span class="font-body-md text-body-md">My Tasks</span></div><span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs">4</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="schedule" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-body-md text-body-md">Schedule</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="grocery-list" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">shopping_bag</span><span class="font-body-md text-body-md">Grocery List</span></div><span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs">3</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="household-memory" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">group</span><span class="font-body-md text-body-md">Household & Memory</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="plan-review" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">assignment_turned_in</span><span class="font-body-md text-body-md">Plan Review</span></div></a></nav></div><div class="flex flex-col p-space-sm gap-space-sm border-t border-outline-variant"><div class="p-space-sm rounded-lg bg-surface-container-low border border-outline-variant flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface font-medium">Household Pulse</span><span class="font-label-xs text-label-xs text-primary-container font-semibold">68% synced</span></div><div class="w-full h-1.5 rounded-full bg-secondary-container overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 68%"></div></div><div class="flex items-center justify-between pt-1"><span class="font-label-xs text-label-xs text-secondary">4 of 6 daily cycles done</span><div class="flex -space-x-1.5 overflow-hidden"><div class="w-4 h-4 rounded-full bg-secondary-fixed flex items-center justify-center text-[8px] font-bold text-on-secondary-fixed ring-1 ring-surface-container-lowest">M</div><div class="w-4 h-4 rounded-full bg-primary-fixed flex items-center justify-center text-[8px] font-bold text-on-primary-fixed ring-1 ring-surface-container-lowest">L</div><div class="w-4 h-4 rounded-full bg-tertiary-fixed flex items-center justify-center text-[8px] font-bold text-on-tertiary-fixed ring-1 ring-surface-container-lowest">S</div></div></div></div><div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-low transition-colors"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9d_k3Qgns-s-_eMdvQGWwfp4z2xtJEkXctImN_NntuQwNFYslLfoaBXIwq9ZUX8hlWLwp9lKa6eEUQSaWrPm3Lx14DGwDyw-ePR3G3gtpbQoArmdS144tXM89pU91l8-6iesydR2YkemT2LGaJEfQmY0Fjy63LqTQbEu2t_Ag-9OcfTeXH4KrY_NnTORQSXT0-q1QoernyO9B8tO1bMUnM5Y9kNn8INSLoVJpaWF2Xmb_BoPb1VEhuw"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Sarah Miller</span><span class="font-label-xs text-label-xs text-secondary leading-tight">Coordinator</span></div></div><a class="p-1 text-secondary hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span></a></div></div></aside><div class="pl-60"><header class="fixed top-0 left-60 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant z-40 px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-[16px]">home_work</span><span>The Miller Residence</span><span class="text-outline-variant">/</span><span class="text-on-surface font-semibold">Operations Engine</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-secondary text-[18px]">search</span><input class="pl-8 pr-3 py-1.5 w-64 rounded-lg bg-surface-container-low border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Search tasks, inventory, notes... (⌘K)" type="text"/></div><button class="p-2 text-secondary hover:text-on-surface rounded-lg hover:bg-surface-container-low transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary-container"></span></button><div class="h-4 w-px bg-outline-variant"></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9d_k3Qgns-s-_eMdvQGWwfp4z2xtJEkXctImN_NntuQwNFYslLfoaBXIwq9ZUX8hlWLwp9lKa6eEUQSaWrPm3Lx14DGwDyw-ePR3G3gtpbQoArmdS144tXM89pU91l8-6iesydR2YkemT2LGaJEfQmY0Fjy63LqTQbEu2t_Ag-9OcfTeXH4KrY_NnTORQSXT0-q1QoernyO9B8tO1bMUnM5Y9kNn8INSLoVJpaWF2Xmb_BoPb1VEhuw"/></div></header><main class="relative pt-16 min-h-screen bg-background w-full px-gutter-desktop py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- Top Greeting & Live Status Header -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Thursday, Oct 24 • 9:42 AM</span>
+<span class="text-outline-variant">•</span>
+<span class="font-semibold text-primary">All systems operational</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Let's get your day in sync, Sarah.</h1>
+<p class="font-body-md text-body-md text-secondary">3 tasks remaining, 1 schedule item tonight, household in balance.</p>
+</div>
+<div class="flex items-center gap-space-sm self-start lg:self-end">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">cloud_done</span>
+<span class="font-label-md text-label-md text-on-surface">Cloud Synced 2m ago</span>
+</div>
+<button class="flex items-center gap-1.5 bg-surface-container-lowest hover:bg-surface-container px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface font-label-md text-label-md shadow-sm transition-all">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Filters</span>
+</button>
+</div>
+</div>
+<!-- Hero Conversational Copilot Prompt -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-secondary-container/40 via-surface-container-lowest to-surface-container-low shadow-sm p-space-lg">
+<div class="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-primary-fixed/30 blur-2xl pointer-events-none"></div>
+<div class="relative flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">What needs to happen at home today?</span>
+<p class="font-label-sm text-label-sm text-secondary">HomePilot synthesizes tasks, calendars, and shopping lists in real time.</p>
+</div>
+</div>
+<span class="hidden sm:inline-flex items-center gap-1 font-label-xs text-label-xs bg-surface-container-lowest text-secondary px-2 py-1 rounded shadow-sm">
+<span class="font-semibold text-primary">Copilot v2.4</span> • Multimodal Active
+        </span>
+</div>
+<!-- Main Input Bar -->
+<div class="relative flex items-center shadow-sm rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-secondary absolute left-3.5 text-[20px]">auto_awesome</span>
+<input class="w-full pl-11 pr-28 py-3 bg-transparent text-on-surface font-body-md text-body-md placeholder:text-secondary focus:outline-none" id="copilot-input" placeholder="Tell HomePilot what's happening… (e.g., We have dinner guests at 7 PM and need groceries)" type="text"/>
+<div class="absolute right-2 flex items-center gap-1.5">
+<kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-label-xs text-secondary bg-surface-container rounded">Enter</kbd>
+<button class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm" id="copilot-submit">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Quick Action Prompt Chips -->
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-secondary font-semibold mr-1">Suggestions</span>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest hover:bg-secondary-container text-on-surface font-label-sm text-label-sm shadow-sm transition-all" onclick="fillPrompt('Prepare for guests')">
+<span>✨</span>
+<span>Prepare for guests</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest hover:bg-secondary-container text-on-surface font-label-sm text-label-sm shadow-sm transition-all" onclick="fillPrompt('Plan this week\'s groceries')">
+<span>🛒</span>
+<span>Plan this week's groceries</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest hover:bg-secondary-container text-on-surface font-label-sm text-label-sm shadow-sm transition-all" onclick="fillPrompt('Organize today\'s chores')">
+<span>🧹</span>
+<span>Organize today's chores</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest hover:bg-secondary-container text-on-surface font-label-sm text-label-sm shadow-sm transition-all" onclick="fillPrompt('Review kids pickup schedule')">
+<span>📅</span>
+<span>Review kids pickup schedule</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Daily Summary Metrics Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Remaining</span>
+<span class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold">4</span>
+<span class="font-headline-sm text-headline-sm text-secondary">Tasks</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">2 high priority, 2 afternoon items</p>
+</div>
+<div class="flex items-center gap-1.5 pt-2">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-xs text-label-xs text-tertiary font-medium">Attention needed before 5 PM</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Completed</span>
+<span class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold">6</span>
+<span class="font-headline-sm text-headline-sm text-secondary">Done Today</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Morning routine, school drop, dog walk</p>
+</div>
+<div class="flex items-center gap-1.5 pt-2">
+<span class="material-symbols-outlined text-primary text-[14px]">trending_up</span>
+<span class="font-label-xs text-label-xs text-primary font-medium">+2 over yesterday pace</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Next Event</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">directions_bus</span>
+</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">School Pickup</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Leo • Lincoln Elementary</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-md text-label-md font-semibold text-primary">3:15 PM</span>
+<span class="font-label-xs text-label-xs text-secondary bg-surface-container px-2 py-0.5 rounded">in 5h 33m</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Household Sync</span>
+<span class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">balance</span>
+</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold">84%</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Chore distribution score</p>
+</div>
+<!-- Progress Ring Visual -->
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-12 h-12 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="84, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="material-symbols-outlined text-[16px] text-primary absolute">check</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 pt-2">
+<span class="font-label-xs text-label-xs text-secondary">Balanced load across Sarah & David</span>
+</div>
+</div>
+</div>
+<!-- Main Content 2-Column Split: Working Canvas & Context Inspector -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT / CENTER COLUMN (~65% width: 8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Section: Today's Chronological Plan -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Today's Chronological Plan</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded text-secondary font-medium">5 Events Mapped</span>
+</div>
+<div class="relative pl-6 space-y-6 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<!-- Item 1: Completed -->
+<div class="relative flex items-start justify-between group">
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-primary flex items-center justify-center ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[10px] text-on-primary">check</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-secondary">8:00 AM</span>
+<span class="font-headline-sm text-headline-sm text-secondary line-through">Morning Routine & School Drop-off</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-xs bg-secondary-container text-on-secondary-container">Completed</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">David drove Leo to Lincoln Elementary • Lunches packed</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">verified</span>
+</div>
+<!-- Item 2: Up next -->
+<div class="relative flex items-start justify-between group">
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-primary-container flex items-center justify-center ring-4 ring-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-primary">1:00 PM</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Quick Dry Cleaning Run</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-xs bg-surface-container text-secondary font-medium">Errand • 20m</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Pick up suit and winter coats from Master Cleaners on 4th Ave</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center font-label-xs text-on-primary-fixed font-bold">S</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative flex items-start justify-between group">
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-surface-container-high ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">3:15 PM</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">School Pickup</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-xs bg-tertiary-fixed text-tertiary font-medium">Carpool</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Lincoln Elementary front circle. Sarah on rotation today</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center font-label-xs text-on-primary-fixed font-bold">S</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative flex items-start justify-between group">
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-surface-container-high ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">5:00 PM</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Prep Living Room & Table Setting</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-xs bg-surface-container-high text-on-surface-variant font-medium">Hosting</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Clear coffee table, put out guest linens and dinnerware for 6 guests</p>
+</div>
+<div class="flex -space-x-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center font-label-xs text-on-primary-fixed font-bold ring-1 ring-surface-container-lowest">S</span>
+<span class="w-6 h-6 rounded-full bg-secondary-fixed flex items-center justify-center font-label-xs text-on-secondary-fixed font-bold ring-1 ring-surface-container-lowest">D</span>
+</div>
+</div>
+<!-- Item 5: Evening highlight -->
+<div class="relative flex items-start justify-between p-3 rounded-lg bg-surface-container-low/60 group">
+<div class="absolute -left-6 top-4 w-4 h-4 rounded-full bg-tertiary-container ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-tertiary-container">7:00 PM</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Dinner Guests Arrive (The Hendersons)</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-xs bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Main Event</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Menu: Braised short ribs, basil risotto, sparkling pear cooler</p>
+</div>
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">wine_bar</span>
+</div>
+</div>
+</div>
+<!-- Section: Household Tasks Execution Queue -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_box</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Household Tasks</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-xs text-label-xs">4 Pending</span>
+</div>
+<button class="flex items-center gap-1 font-label-sm text-label-sm text-primary hover:text-primary-container font-semibold">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add Task</span>
+</button>
+</div>
+<!-- Task List Items -->
+<div class="flex flex-col gap-1">
+<!-- Task 1 -->
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<button class="w-4 h-4 rounded bg-surface-container-lowest flex items-center justify-center hover:bg-secondary-container transition-all">
+<span class="w-2 h-2 rounded-sm bg-outline"></span>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Order fresh basil & sparkling water from Whole Foods</span>
+<div class="flex items-center gap-2 text-secondary font-label-xs text-label-xs">
+<span>Due by 11:30 AM</span>
+<span>•</span>
+<span>Needed for tonight's dinner</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded text-label-xs font-label-xs bg-error-container text-on-error-container font-medium">High</span>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded">
+<span class="w-4 h-4 rounded-full bg-primary-fixed flex items-center justify-center text-[9px] font-bold text-on-primary-fixed">S</span>
+<span class="font-label-xs text-label-xs text-on-surface">Sarah</span>
+</div>
+</div>
+</div>
+<!-- Task 2 -->
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<button class="w-4 h-4 rounded bg-surface-container-lowest flex items-center justify-center hover:bg-secondary-container transition-all">
+<span class="w-2 h-2 rounded-sm bg-outline"></span>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Empty dishwasher and wipe down center island</span>
+<div class="flex items-center gap-2 text-secondary font-label-xs text-label-xs">
+<span>Due by 2:00 PM</span>
+<span>•</span>
+<span>Kitchen zone</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded text-label-xs font-label-xs bg-tertiary-fixed text-on-tertiary-fixed font-medium">Med</span>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded">
+<span class="w-4 h-4 rounded-full bg-secondary-fixed flex items-center justify-center text-[9px] font-bold text-on-secondary-fixed">D</span>
+<span class="font-label-xs text-label-xs text-on-surface">David</span>
+</div>
+</div>
+</div>
+<!-- Task 3 -->
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<button class="w-4 h-4 rounded bg-surface-container-lowest flex items-center justify-center hover:bg-secondary-container transition-all">
+<span class="w-2 h-2 rounded-sm bg-outline"></span>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Replenish powder room hand towels & cedar diffuser</span>
+<div class="flex items-center gap-2 text-secondary font-label-xs text-label-xs">
+<span>Due by 4:30 PM</span>
+<span>•</span>
+<span>Guest prep checklist</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded text-label-xs font-label-xs bg-tertiary-fixed text-on-tertiary-fixed font-medium">Med</span>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded">
+<span class="w-4 h-4 rounded-full bg-primary-fixed flex items-center justify-center text-[9px] font-bold text-on-primary-fixed">S</span>
+<span class="font-label-xs text-label-xs text-on-surface">Sarah</span>
+</div>
+</div>
+</div>
+<!-- Task 4 -->
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<button class="w-4 h-4 rounded bg-surface-container-lowest flex items-center justify-center hover:bg-secondary-container transition-all">
+<span class="w-2 h-2 rounded-sm bg-outline"></span>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Program patio lighting and ambient jazz playlist</span>
+<div class="flex items-center gap-2 text-secondary font-label-xs text-label-xs">
+<span>Due by 6:30 PM</span>
+<span>•</span>
+<span>Smart Home automation</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded text-label-xs font-label-xs bg-surface-container-high text-secondary font-medium">Low</span>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded">
+<span class="w-4 h-4 rounded-full bg-secondary-fixed flex items-center justify-center text-[9px] font-bold text-on-secondary-fixed">D</span>
+<span class="font-label-xs text-label-xs text-on-surface">David</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Recent Assistant Activity Log -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">history</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Assistant Activity</h2>
+</div>
+<span class="font-label-xs text-label-xs text-secondary">Autonomous Operations</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
+<div class="w-7 h-7 rounded-md bg-primary-container text-on-primary flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">HomePilot automated grocery replenishment list</span>
+<span class="font-label-xs text-label-xs text-secondary">20m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Pantry telemetry detected oat milk & basmati rice below 25% threshold.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
+<div class="w-7 h-7 rounded-md bg-secondary-container text-on-secondary-container flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-[16px]">person</span>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">David marked 'Dog Walking' complete</span>
+<span class="font-label-xs text-label-xs text-secondary">8:15 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Morning 2.1-mile neighborhood circuit logged via Smart Collar telemetry.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT CONTEXT COLUMN (~35% width: 4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Tonight's Schedule Highlight Card with Atmospheric Visual -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="h-32 w-full bg-cover bg-center relative" data-alt="Warm modern Scandinavian dining room with a long oak table set with ceramic plates, linen napkins, glowing taper candles, and fresh eucalyptus centerpiece in soft evening light" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDW5ZWlBZj4NXQ7-0Cck5W9yNiHFkYJETiXR42g9vpQ9Grp2t8KfYeTmzZlEksZGPGJgRYCwgegN2E4kCQ_7SqEc2DWBHF7p2OrAWzxCCzGlzwdGNtIpei8iGPCfhZBERrtXIKIA4aN4mLDtn3JE-FryOPMv_kj9B5mhi2ciggO5sl3CyYjKngtyuS8ctPkwTCfpIRPVOshu4nWRLFyqEywuqkmvUhAbu102Qvh0LkTjmiFuvjBLPSKDg')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-2 py-0.5 rounded text-tertiary-container font-label-xs text-label-xs font-semibold">
+            Tonight's Highlight
+          </div>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm -mt-4 relative">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold">7:00 PM</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Dinner Guests: The Hendersons</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">6 adults total. Menu coordinated. Ambient temperature preset scheduled for 6:45 PM (69°F).</p>
+<div class="p-3 rounded-lg bg-surface-container flex flex-col gap-1.5 mt-1">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-secondary">Guest Dietary Notes:</span>
+<span class="text-on-surface font-medium">1 Gluten-free (Elena)</span>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-secondary">Wine Pairing:</span>
+<span class="text-on-surface font-medium">2021 Willamette Pinot Noir</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Grocery Checklist -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">shopping_bag</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Quick Grocery List</span>
+</div>
+<span class="font-label-xs text-label-xs bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded font-semibold">4 Pending</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Instacart delivery pending Sarah's one-tap approval.</p>
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Basmati Rice (Organic 5lb)</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary font-medium">Pantry restock</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Oat Milk (Barista Blend)</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary font-medium">2 cartons</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">San Pellegrino Mineral Water</span>
+</div>
+<span class="font-label-xs text-label-xs text-tertiary font-medium">For dinner</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">Fresh Sweet Basil</span>
+</div>
+<span class="font-label-xs text-label-xs text-tertiary font-medium">For risotto</span>
+</div>
+</div>
+<button class="w-full mt-2 py-2 rounded-lg bg-surface-container hover:bg-secondary-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">shopping_cart_checkout</span>
+<span>Send Cart to Instacart ($34.80)</span>
+</button>
+</div>
+<!-- Household Availability Telemetry -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">group</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Household Availability</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<div class="flex flex-col gap-2 pt-1">
+<!-- Sarah -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<img alt="Sarah" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9d_k3Qgns-s-_eMdvQGWwfp4z2xtJEkXctImN_NntuQwNFYslLfoaBXIwq9ZUX8hlWLwp9lKa6eEUQSaWrPm3Lx14DGwDyw-ePR3G3gtpbQoArmdS144tXM89pU91l8-6iesydR2YkemT2LGaJEfQmY0Fjy63LqTQbEu2t_Ag-9OcfTeXH4KrY_NnTORQSXT0-q1QoernyO9B8tO1bMUnM5Y9kNn8INSLoVJpaWF2Xmb_BoPb1VEhuw"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Sarah</span>
+<span class="font-label-xs text-label-xs text-primary font-medium">Available now</span>
+</div>
+</div>
+<span class="font-label-xs text-label-xs text-secondary">At Home</span>
+</div>
+<!-- David -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-semibold text-on-secondary-fixed">D</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">David</span>
+<span class="font-label-xs text-label-xs text-tertiary font-medium">In meetings until 6:00 PM</span>
+</div>
+</div>
+<span class="font-label-xs text-label-xs text-secondary">Downtown Office</span>
+</div>
+<!-- Leo -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-semibold text-on-primary-fixed">L</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Leo</span>
+<span class="font-label-xs text-label-xs text-secondary font-medium">In class until 3:15 PM</span>
+</div>
+</div>
+<span class="font-label-xs text-label-xs text-secondary">Elementary</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 px-1 text-secondary font-label-xs text-label-xs">
+<span>Home Geofence: 1 of 3 present</span>
+<span class="text-primary font-semibold cursor-pointer hover:underline">View Family Map</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function fillPrompt(text) {
+    const input = document.getElementById('copilot-input');
+    if (input) {
+      input.value = text;
+      input.focus();
+    }
+  }
+
+  document.getElementById('copilot-submit')?.addEventListener('click', function() {
+    const input = document.getElementById('copilot-input');
+    if (input && input.value.trim() !== '') {
+      input.value = 'Analyzing and adjusting household plan...';
+      input.disabled = true;
+      setTimeout(() => {
+        input.value = '';
+        input.disabled = false;
+        input.placeholder = 'Plan updated! What else needs attention?';
+      }, 1200);
+    }
+  });
+
+  document.getElementById('copilot-input')?.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      document.getElementById('copilot-submit')?.click();
+    }
+  });
+</script></main></div></body></html>

@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+web/dist/
+server/dist/
+*.tsbuildinfo
+
+# Runtime data (local database files)
+server/data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Test / coverage
+coverage/
+.vitest/
+
+# Local agent/preview tooling (logs, run doc, screenshot helper)
+.freebuff/
+
+# Screenshots produced locally for docs (keep committed ones under docs/screenshots)
+/tmp/
+api/
+api/api.txt
